@@ -33,8 +33,8 @@ default["vhost"]["tld"]           = "com"
 # The domain name of your website / product 
 default["vhost"]["domain_name"]   = "example"
 
-# Extension of your document root beyond /var/www/html/local.domainname.com/
-# Only needed if your doc root is something other than /var/www/html/local.domainname.com/
+# Extension of your document root beyond /var/www/vhosts/local.domainname.com/
+# Only needed if your doc root is something other than /var/www/vhosts/local.domainname.com/
 # Examples:
 #   - Symfony: /symfony-project-name/web
 #   - Zend: /public

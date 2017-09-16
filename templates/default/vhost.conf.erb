@@ -26,13 +26,13 @@
 
 <VirtualHost *:80>
   ServerName <%=@server_name%> 
-  DocumentRoot /var/www/html/<%=@document_root%>
+  DocumentRoot /var/www/vhosts/<%=@document_root%>
 
   <% if node.recipe?('xhgui') %>
-    #php_admin_value auto_prepend_file "/var/www/html/local.xhgui.com/external/header.php"
+    #php_admin_value auto_prepend_file "/var/www/vhosts/local.xhgui.com/external/header.php"
   <% end %>
 
-  <Directory /var/www/html/<%=@document_root%>>
+  <Directory /var/www/vhosts/<%=@document_root%>>
     Options Indexes FollowSymLinks MultiViews
     AllowOverride All 
     Require all granted
@@ -47,13 +47,13 @@
 
 <VirtualHost *:443>
   ServerName <%=@server_name%> 
-  DocumentRoot /var/www/html/<%=@document_root%>
+  DocumentRoot /var/www/vhosts/<%=@document_root%>
 
   <% if node.recipe?('xhgui') %>
-    php_admin_value auto_prepend_file "/var/www/html/local.xhgui.com/external/header.php"
+    php_admin_value auto_prepend_file "/var/www/vhosts/local.xhgui.com/external/header.php"
   <% end %>
 
-  <Directory /var/www/html/<%=@document_root%>>
+  <Directory /var/www/vhosts/<%=@document_root%>>
     Options Indexes FollowSymLinks MultiViews
     AllowOverride All 
     Require all granted

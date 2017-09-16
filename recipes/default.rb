@@ -22,6 +22,14 @@
 # along with PhpVagrantMulti.  If not, see <http://www.gnu.org/licenses/>.
 ##
 
+directory "/var/www/vhosts" do
+    not_if { Dir.exists?("/var/www/vhosts") }
+    owner "www-data"
+    group "www-data"
+    mode  "0755"
+    action :create
+end
+
 template "vhost.conf" do
     path "#{node["apache"]["dir"]}/sites-available/local.#{node["vhost"]["domain_name"]}.#{node["vhost"]["tld"]}.conf"
     source "vhost.conf.erb"
